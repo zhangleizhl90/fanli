@@ -1,6 +1,6 @@
-package me.zhl.fanli.entity.request;
+package me.zhl.fanli.controller.entity.request;
 
-public class LoginPasswordRequest {
+public class RegisterPasswordRequest {
     private String username;
     private String password;
 

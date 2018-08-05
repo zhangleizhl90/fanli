@@ -1,7 +1,7 @@
 package me.zhl.fanli.controller;
 
+import me.zhl.fanli.controller.entity.response.ProductAllResponse;
 import me.zhl.fanli.entity.Product;
-import me.zhl.fanli.entity.response.ProductAllResponse;
 import me.zhl.fanli.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,12 +14,16 @@ import java.util.List;
 @RequestMapping("/product")
 public class ProductController {
 
+    private ProductService mProductService;
+
     @Autowired
-    ProductService productService;
+    public ProductController(ProductService productService) {
+        this.mProductService = productService;
+    }
 
     @GetMapping("/all")
     public ProductAllResponse getAll() {
-        List<Product> productList = productService.getAll();
+        List<Product> productList = mProductService.getAll();
         ProductAllResponse response = new ProductAllResponse();
         response.setProductList(productList);
         return response;

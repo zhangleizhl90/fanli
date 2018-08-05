@@ -1,4 +1,4 @@
-package me.zhl.fanli.entity.response;
+package me.zhl.fanli.controller.entity.response;
 
 public class BaseResponse {
     private String resCode = "00";
