@@ -4,7 +4,6 @@ import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
-@Table(name = "products")
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
